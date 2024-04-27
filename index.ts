@@ -1,7 +1,7 @@
 import type Evented from '@ember/object/evented';
 import type Mixin from '@ember/object/mixin';
 
-type EventMap = {
+export type EventMap = {
   [key: string]: (...args: any[]) => void;
 };
 
