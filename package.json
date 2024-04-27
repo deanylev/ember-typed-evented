@@ -1,0 +1,9 @@
+{
+  "name": "ember-typed-evented",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/ember__object": "^4.0.12"
+  }
+}
