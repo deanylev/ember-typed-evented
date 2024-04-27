@@ -1,5 +1,5 @@
 # Ember Typed Evented
-[typed-emitter](https://github.com/andywer/typed-emitter) but for Ember Evented.
+[typed-emitter](https://www.npmjs.com/package/typed-emitter) but for Ember Evented.
 
 ## Installation
 ```
@@ -19,6 +19,7 @@ PRs welcome, I'm sure it's possible with TS.
 
 ## Usage
 ```
+import Evented from '@ember/object/evented';
 import Service from '@ember/service';
 
 import { createdTypedEvented } from 'ember-typed-evented';
@@ -28,7 +29,7 @@ type Events = {
   bar: (arg1: string, arg2: number) => void;
 };
 
-export default class MyAwesomeService extends Service.extend(createdTypedEvented<Events>()) {
+export default class MyAwesomeService extends Service.extend(createdTypedEvented<Events>(Evented)) {
   myMethod() {
     this.trigger('foo'); // nice
     this.trigger('bar', 'myString', 1); // nice

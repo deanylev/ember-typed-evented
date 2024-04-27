@@ -1,5 +1,5 @@
-import Evented from '@ember/object/evented';
-import Mixin from '@ember/object/mixin';
+import type Evented from '@ember/object/evented';
+import type Mixin from '@ember/object/mixin';
 
 type EventMap = {
   [key: string]: (...args: any[]) => void;
@@ -20,6 +20,6 @@ export interface TypedEvented<TEvents extends EventMap> {
   trigger<TEvent extends keyof TEvents>(name: TEvent, ...args: Parameters<TEvents[TEvent]>): void;
 }
 
-export function createTypedEvented<TEvents extends EventMap = never>() {
-  return Evented as Mixin<TypedEvented<TEvents>>;
+export function createTypedEvented<TEvents extends EventMap = never>(evented: typeof Evented) {
+  return evented as Mixin<TypedEvented<TEvents>>;
 }
