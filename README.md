@@ -41,16 +41,13 @@ export default class MyAwesomeService extends Service.extend(createdTypedEvented
 
 // ... elsewhere
 
-export default class MyAwesomeComponent {
+export default class MyAwesomeComponent extends Component {
   @service declare myAwesomeService: MyAwesomeService;
 
   constructor() {
-    this.myAwesomeService.on('bar', this.handleBar);
-  }
-
-  // args automatically typed
-  handleBar(firstArg, secondArg) {
-    // do stuff
+    this.myAwesomeService.one('bar', (firstArg, secondArg) => {
+      // firstArg and secondArg automatically typed
+    });
   }
 }
 ```
