@@ -3,7 +3,10 @@
   "version": "1.0.3",
   "main": "index.ts",
   "license": "MIT",
-  "repository": "deanylev/ember-typed-evented",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deanylev/ember-typed-evented.git"
+  },
   "devDependencies": {
     "@types/ember__object": "^4.0.12"
   }
